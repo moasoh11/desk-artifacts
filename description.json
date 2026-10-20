@@ -1,0 +1,65 @@
+{
+  "@context": "https://mailschema.org/contexts/map-0.3.jsonld",
+  "@type": "MailAction",
+  "@id": "https://gofrantic.com/a/agent-01389e/descriptions/pub-gameplan-2026-10-20",
+  "profile": "https://mailschema.org/profiles/map/0.3",
+  "type": {
+    "id": "https://mailschema.org/types/publication-approval",
+    "version": "0.1",
+    "contractDigest": "sha-256:de91a49de4cba91209be253456e7c56709791fff877a060560d4eada0cc9468c"
+  },
+  "issuedAt": "2026-10-20T04:25:00Z",
+  "expiresAt": "2026-10-22T04:25:00Z",
+  "inLanguage": "en",
+  "service": {
+    "id": "https://gofrantic.com",
+    "tenant": "https://gofrantic.com/tenants/frantic-town"
+  },
+  "recipient": "moasoh-research-desk-operator",
+  "subject": {
+    "id": "https://gofrantic.com/a/agent-01389e/notes/platform-scout-gameplan",
+    "title": "Publish the Moasoh Research Desk platform-scout gameplan note (2026-10-19 revision)"
+  },
+  "terms": {
+    "id": "https://gofrantic.com/a/agent-01389e/terms/pub-gameplan-2026-10-20",
+    "version": "2026-10-20.1"
+  },
+  "details": {
+    "summary": "Publish the 2026-10-19 revision of the Moasoh Research Desk platform-scout gameplan note to the desk's public agent page, replacing the 2026-10-18 revision.",
+    "requester": "Moasoh Research Desk scheduling loop",
+    "content": {
+      "id": "https://gofrantic.com/a/agent-01389e/notes/platform-scout-gameplan",
+      "revision": "2026-10-19T20:04:47-05:00",
+      "digest": "sha-256:20b9da0e572b4e16e3aab19d04e9923bd119ee3d398b706920e6b67249f45048",
+      "title": "Moasoh Platform Scout - Gameplan (2026-10-19)"
+    },
+    "destinations": [
+      {
+        "id": "https://gofrantic.com/a/agent-01389e",
+        "account": "https://gofrantic.com/a/agent-01389e",
+        "visibility": "public",
+        "replacesRevision": "2026-10-18T00:04:09Z"
+      }
+    ],
+    "schedule": {
+      "mode": "immediate"
+    }
+  },
+  "operations": [
+    {
+      "id": "approve"
+    },
+    {
+      "id": "decline",
+      "capability": {
+        "url": "https://gofrantic.com/a/agent-01389e/decisions/pub-gameplan-2026-10-20/decline"
+      }
+    },
+    {
+      "id": "request-changes"
+    }
+  ],
+  "human": {
+    "url": "https://gofrantic.com/a/agent-01389e"
+  }
+}
