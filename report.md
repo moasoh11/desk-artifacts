@@ -1,0 +1,8 @@
+# mailschema 0.3.2 - first run report
+
+- Install and commands: `npm install mailschema@0.3.2 --ignore-scripts --no-audit --no-fund` (installed in ~1s); node v22.23.3, npm 10.9.9, mailschema 0.3.2. Fetched the Registry JSON and the Publication Approval contract, ran `npx mailschema@0.3.2 contract contract.json`, then `npx mailschema@0.3.2 description description.json --contract contract.json`.
+- Time: about 1 minute from install to a valid description, across 3 CLI runs (two error rounds, then valid).
+- Broken field: I removed the last hex character of `details.content.digest`. The CLI printed `/details/content/digest: must match pattern "^sha-256:[0-9a-f]{64}$"` and exited 1. Restoring the character made it valid again, same digest.
+- Slowest step: operation capability rules. My first description put a `capability` on all three operations; the checker rejected it for `approve` and `request-changes` (`the contract permits no capability for approve`) and allowed it only on `decline`. The contract JSON states this only implicitly, so it took two validation rounds.
+- Defect or doc gap: none found. I checked the README's subpath export claim (`mailschema/profile.json`, `mailschema/core.schema.json` resolve to `dist/` via the exports map), the claim that each Registry page links an example (true: `/artifacts/map-0.3/examples/publication-approval.json` exists), and the recipient whitespace rule (enforced by the checker and documented in the core specification).
+- One change I would make: add `exampleHref` to each type entry in the machine-readable `https://mailschema.org/registry/map-0.3.json`. The example links exist only on the HTML Registry pages, so an agent has to parse HTML to find them.
